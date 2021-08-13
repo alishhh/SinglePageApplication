@@ -1,4 +1,4 @@
 # SinglePageApplication
-![Screenshot1](screenshots/img.png)
-![Screenshot2](screenshots/img.png)
-![Screenshot3](screenshots/img.png)
+![Screenshot1](screenshots/1.jpg)
+![Screenshot2](screenshots/2.jpg)
+![Screenshot3](screenshots/3.jpg)
