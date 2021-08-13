@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+    <head>
+        <title>CAR'S DETAILS</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    </head>
+
+    <body class="p-3 mb-2 bg-dark text-white">
+        <h1>CAR'S DETAILS</h1>
+        <h4><a href="/details/createDetail">CREATE DETAIL</a></h4>
+        <h4><a href="/details/pdfreport">DOWNLOAD PDF</a></h4>
+        <br>
+        <table class="table table-dark table-hover">
+            <thead>
+            <tr>
+                <th>DETAIL</th>
+                <th>PRICE</th>
+                <th>COUNT</th>
+                <th>QUANTITY COST</th>
+                <th>EDIT</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="detail:${details}">
+                <td th:text="${detail.getName}"></td>
+                <td th:text="${detail.getPrice}"></td>
+                <td th:text="${detail.getCount}"></td>
+                <td th:text="${detail.getQuantityCost}"></td>
+                <td>
+                    <form th:action="@{/details/addCount}" method="post">
+                        <input type="hidden" name="id" th:value="${detail.getId}">
+                        <input type="submit" value="ADD" class="btn btn-danger">
+                    </form>
+                </td>
+                <td>
+                    <form th:action="@{/details/deleteDetail}" method="post">
+                        <input type="hidden" name="id" th:value="${detail.getId}">
+                        <input type="submit" value="DELETE" class="btn btn-danger">
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
